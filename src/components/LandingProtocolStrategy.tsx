@@ -45,7 +45,7 @@ function LandingProtocolStrategy() {
     const newUSDAmount = k / newTokenAmount;
 
     const liquidityPoolBalance = newTokenAmount * futureTokenPriceInUSDNumber + newUSDAmount;
-    const feesEarnedFromAPR = ((initUSDAmountNumber * poolAPRNumber) / 100 / 365) * daysNumber;
+    const feesEarnedFromAPR = ((liquidityPoolBalance * poolAPRNumber) / 100 / 365) * daysNumber;
     const totalBalance = liquidityPoolBalance + feesEarnedFromAPR + availableUsdInLanding;
     const profit = totalBalance - initUSDAmountNumber;
     const roi = (profit / initUSDAmountNumber) * 100;
